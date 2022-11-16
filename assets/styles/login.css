@@ -91,12 +91,24 @@ body {
           align-items: flex-start;
 }
 
+@media (max-width: 768px) {
+  .left .leftCard {
+    height: initial;
+  }
+}
+
 .left .leftCard .logo {
   color: #fff;
   font-weight: 600;
   letter-spacing: 1px;
   margin-left: 2em;
   margin-top: 2em;
+}
+
+@media (max-width: 768px) {
+  .left .leftCard .logo {
+    margin: 1em;
+  }
 }
 
 .left .leftCard .middleDiv {
@@ -129,6 +141,12 @@ body {
   margin: 2em;
   border-radius: 20px;
   padding: 1em;
+}
+
+@media (max-width: 768px) {
+  .left .leftCard .bottomDiv {
+    margin: 1em;
+  }
 }
 
 .left .leftCard .bottomDiv .testimony {
@@ -240,8 +258,20 @@ body {
   width: 48%;
 }
 
+@media (max-width: 768px) {
+  .right .inputView:nth-child(1) {
+    width: 100%;
+  }
+}
+
 .right .inputView:nth-child(2) {
   width: 48%;
+}
+
+@media (max-width: 768px) {
+  .right .inputView:nth-child(2) {
+    width: 100%;
+  }
 }
 
 .right .inputView:nth-child(3) {
@@ -342,6 +372,12 @@ body {
   z-index: -1;
 }
 
+@media (max-width: 768px) {
+  .right .inputView label {
+    display: none;
+  }
+}
+
 .right .buttonView {
   width: 100%;
 }
@@ -364,6 +400,8 @@ body {
 .right .signupButton:hover {
   -webkit-box-shadow: 0 10px 20px -10px #3C37FF;
           box-shadow: 0 10px 20px -10px #3C37FF;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
 }
 
 .rais {
