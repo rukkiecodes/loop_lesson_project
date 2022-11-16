@@ -1,0 +1,468 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+body {
+  background-color: #D8DEE7;
+  height: 100vh;
+}
+
+.card {
+  border-radius: 20px;
+  background: #fff;
+  -webkit-box-shadow: 20px 20px 60px #b8bdc4, -20px -20px 60px #f8ffff;
+          box-shadow: 20px 20px 60px #b8bdc4, -20px -20px 60px #f8ffff;
+  width: 1000px;
+  max-width: 95%;
+  height: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 768px) {
+  .card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    max-width: initial;
+    height: 100%;
+    border-radius: 0;
+    margin: 0;
+    overflow-y: auto;
+  }
+}
+
+.left {
+  width: 40%;
+  height: 100%;
+  padding: .5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 768px) {
+  .left {
+    width: 100%;
+  }
+}
+
+.left .leftCard {
+  background-color: #3C37FF;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.left .leftCard .logo {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-left: 2em;
+  margin-top: 2em;
+}
+
+.left .leftCard .middleDiv {
+  margin: 0 2em;
+}
+
+.left .leftCard .middleDiv p {
+  color: #fff;
+}
+
+.left .leftCard .middleDiv p:nth-child(1) {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+.left .leftCard .middleDiv p:nth-child(2) {
+  font-size: 1rem;
+  margin-bottom: 0;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .left .leftCard .middleDiv {
+    display: none;
+  }
+}
+
+.left .leftCard .bottomDiv {
+  background-color: #302bcc;
+  margin: 2em;
+  border-radius: 20px;
+  padding: 1em;
+}
+
+.left .leftCard .bottomDiv .testimony {
+  color: #fff;
+  font-size: .9rem;
+  margin-top: 0;
+}
+
+.left .leftCard .bottomDiv .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.left .leftCard .bottomDiv .list img {
+  width: 50px;
+  height: auto;
+  border-radius: 12px;
+  margin-right: 1em;
+}
+
+.left .leftCard .bottomDiv .list .listLeft p {
+  color: #fff;
+}
+
+.left .leftCard .bottomDiv .list .listLeft p:nth-child(1) {
+  font-size: .9rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.left .leftCard .bottomDiv .list .listLeft p:nth-child(2) {
+  font-size: .7rem;
+  font-weight: 300;
+  margin: 0;
+  margin-top: .3em;
+}
+
+.right {
+  width: 60%;
+  height: 100%;
+  padding: .5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .right {
+    width: 100%;
+  }
+}
+
+.right .head {
+  margin: 2em;
+}
+
+.right .head p {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.right .head p:nth-child(1) {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.right .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2em;
+}
+
+.right .inputView {
+  position: relative;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+  margin-bottom: 2em;
+}
+
+.right .inputView:nth-child(1) {
+  width: 48%;
+}
+
+.right .inputView:nth-child(2) {
+  width: 48%;
+}
+
+.right .inputView:nth-child(3) {
+  width: 100%;
+}
+
+.right .inputView:nth-child(4) {
+  width: 100%;
+}
+
+.right .inputView:nth-child(4) button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 3em;
+  height: 3em;
+  border: none;
+  border-radius: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.right .inputView:nth-child(4) button i {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.right .inputView:nth-child(4) button:hover {
+  -webkit-box-shadow: 0 10px 20px -10px #3C37FF;
+          box-shadow: 0 10px 20px -10px #3C37FF;
+}
+
+.right .inputView:nth-child(4) button:hover i {
+  color: #3C37FF;
+}
+
+.right .inputView .icon {
+  width: 3em;
+  height: 3em;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 12px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+.right .inputView .icon i {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.right .inputView input {
+  width: 100%;
+  height: 3em;
+  padding: 0 1em 0 4em;
+  outline: 0;
+  border-color: transparent;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+  border-radius: 12px;
+}
+
+.right .inputView input:focus {
+  border-bottom-color: #3C37FF;
+  border-radius: 12px;
+  background: #ffffff;
+  -webkit-box-shadow: 7px 7px 14px #d9d9d9, -7px -7px 14px #ffffff;
+          box-shadow: 7px 7px 14px #d9d9d9, -7px -7px 14px #ffffff;
+}
+
+.right .inputView label {
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+  position: absolute;
+  left: 22%;
+  top: 50%;
+  -webkit-transform: translate(-20%, -50%);
+          transform: translate(-20%, -50%);
+  font-size: .8rem;
+  z-index: -1;
+}
+
+.right .buttonView {
+  width: 100%;
+}
+
+.right .signupButton {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border: none;
+  height: 3em;
+  width: 100%;
+  border-radius: 12px;
+  background-color: #3C37FF;
+  color: #fff;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+  cursor: pointer;
+}
+
+.right .signupButton:hover {
+  -webkit-box-shadow: 0 10px 20px -10px #3C37FF;
+          box-shadow: 0 10px 20px -10px #3C37FF;
+}
+
+.rais {
+  -webkit-box-shadow: 0 10px 20px -10px #3C37FF;
+          box-shadow: 0 10px 20px -10px #3C37FF;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+  background-color: #fff !important;
+}
+
+.raisIcon {
+  color: #3C37FF !important;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+.raisError {
+  -webkit-box-shadow: 0 10px 20px -10px #FF4757;
+          box-shadow: 0 10px 20px -10px #FF4757;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+  background-color: #fff !important;
+}
+
+.raisIconError {
+  color: #FF4757 !important;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+.activeLabel {
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+  -webkit-transform: translate(0%, -300%) !important;
+          transform: translate(0%, -300%) !important;
+  color: #3C37FF !important;
+  z-index: 0 !important;
+}
+
+.activeLabelError {
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+  -webkit-transform: translate(0%, -300%) !important;
+          transform: translate(0%, -300%) !important;
+  color: #FF4757 !important;
+  z-index: 0 !important;
+}
+
+.activeLabelEmail {
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+  -webkit-transform: translate(-189%, -300%) !important;
+          transform: translate(-189%, -300%) !important;
+  color: #3C37FF !important;
+  z-index: 0 !important;
+}
+
+.activeLabelEmailError {
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+  -webkit-transform: translate(-189%, -300%) !important;
+          transform: translate(-189%, -300%) !important;
+  color: #FF4757 !important;
+  z-index: 0 !important;
+}
+
+.activeLabelPassword {
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+  -webkit-transform: translate(-106%, -300%) !important;
+          transform: translate(-106%, -300%) !important;
+  color: #3C37FF !important;
+  z-index: 0 !important;
+}
+
+.activeLabelPasswordError {
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+  -webkit-transform: translate(-106%, -300%) !important;
+          transform: translate(-106%, -300%) !important;
+  color: #FF4757 !important;
+  z-index: 0 !important;
+}
+
+.errorInput {
+  border-bottom-color: #FF4757 !important;
+  border-radius: 12px;
+  background: #ffffff;
+  -webkit-box-shadow: 7px 7px 14px #d9d9d9, -7px -7px 14px #ffffff;
+          box-shadow: 7px 7px 14px #d9d9d9, -7px -7px 14px #ffffff;
+}
+
+.generalError {
+  font-size: .8rem;
+  color: #FF4757;
+  font-weight: 600;
+}
+/*# sourceMappingURL=login.css.map */
