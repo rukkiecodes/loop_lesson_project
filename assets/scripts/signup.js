@@ -337,3 +337,9 @@ _passwordinput.addEventListener('blur', () => {
     _generalError.innerText = ''
   }
 })
+
+_signupButton.addEventListener('click', () => {
+  if (_fistname.value != '' && _lastname.value != '' && _emailInput.value.match(emailRege) && _passwordinput.value.match(passwordReg) )  {
+    
+  }
+})
