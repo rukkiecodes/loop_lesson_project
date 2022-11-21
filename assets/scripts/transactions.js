@@ -1,42 +1,93 @@
-export default [
-  {
-    id: 1,
-    name: 'Akerebari Dumele',
-    wins: 12,
-    losses: 5,
-    rate: 35,
-    image: 'https://res.cloudinary.com/rukkiecodes/image/upload/v1668519308/Black_Minimalist_and_Elegant_Boutique_Logo_1_omcgcu.png'
-  },
-  {
-    id: 2,
-    name: 'Terry Ochuko',
-    wins: 12,
-    losses: 5,
-    rate: 35,
-    image: 'https://res.cloudinary.com/rukkiecodes/image/upload/v1668519245/83518331_127826968719847_5907551280254943232_n_a1ayor.jpg'
-  },
-  {
-    id: 3,
-    name: 'Peace John',
-    wins: 12,
-    losses: 5,
-    rate: 35,
-    image: 'https://res.cloudinary.com/rukkiecodes/image/upload/v1667346265/Screenshot_from_2022-11-02_00-39-45_b0arsw.png'
-  },
-  {
-    id: 4,
-    name: 'Deborah Nebble',
-    wins: 12,
-    losses: 5,
-    rate: 35,
-    image: 'https://res.cloudinary.com/rukkiecodes/image/upload/v1664014178/nodejs_n2acwe.png'
-  },
-  {
-    id: 5,
-    name: 'James Esther',
-    wins: 12,
-    losses: 5,
-    rate: 35,
-    image: 'https://res.cloudinary.com/rukkiecodes/image/upload/v1663779675/om2_k8rzve.jpg'
-  },
-];
+const _addButton = document.querySelector('#addButton');
+const _addInput = document.querySelector('input');
+const _mainTransactionCards = document.querySelector('.mainTransactionCards');
+const _leftTransactionCards = document.querySelector('.leftTransactionCards');
+
+let copied = [];
+let copies = [];
+
+(async () => {
+  const rawResponse = await fetch('https://trustpaddi-waitlist.herokuapp.com/copy/getAllCopies', {
+    method: 'POST',
+    body: 200
+  });
+  const content = await rawResponse.json();
+  copies.push(...content?.copies)
+
+  updateCopies(content?.copies)
+
+  let listItemButton = document.querySelectorAll('.listItemButton');
+
+  listItemButton.forEach(button => {
+    button.addEventListener('click', async function () {
+      let copy = this.parentNode.parentNode
+      const addCopyData = copy.querySelector('#addCopyData').innerText
+
+      addToCopiedArray(JSON.parse(addCopyData))
+
+      this.style.backgroundColor = '#04c404'
+      this.style.boxShadow = '0 10px 20px -10px #04c404'
+      this.innerText = 'Copied'
+    })
+  })
+})();
+
+const addToCopiedArray = (object) => {
+  copied = []
+  copied.push(object)
+  updateCopied(copied)
+};
+
+const updateCopies = (copies) =>
+  copies.forEach(item => {
+    _mainTransactionCards.innerHTML += `<div class="listItem copiesList">
+                                          <div id="addCopyData" style="display: none">${JSON.stringify(item)}</div>
+                                          <div class="listItemLeft">
+                                            <img src="${item.image}" alt="${item.name}">
+                                            <div class="infoView">
+                                              <span>${item.name.slice(0, 10)}</span>
+                                              <span>${item.wins} wins - ${item.losses} losses</span>
+                                              <span>${item.rate}% Rate</span>
+                                            </div>
+                                          </div>
+                                          <div class="listItemButtonContainer">
+                                            <button class="listItemButton"> Copy </button>
+                                          </div>
+                                        </div>`
+  });
+
+
+const updateCopied = (copied) =>
+  copied.forEach(item => {
+    _leftTransactionCards.innerHTML += `<div class="listItem leftSideListItem">
+                                          <div id="addCopyData" style="display: none">${JSON.stringify(item)}</div>
+                                          <div class="listItemLeft">
+                                            <img src="${item.image}" alt="${item.name}">
+                                            <div class="infoView">
+                                              <span>${item.name.slice(0, 10)}</span>
+                                              <span>${item.wins} wins - ${item.losses} losses</span>
+                                              <span>${item.rate}% Rate</span>
+                                            </div>
+                                          </div>
+                                          <div class="listItemButtonContainer">
+                                            <button class="listItemButton"> Delete </button>
+                                          </div>
+                                        </div>`
+  });
+
+_addButton.addEventListener('click', () => {
+  if (_addInput.value == '') return
+
+  let newCopy = [...copies]
+  copies = []
+  const randomTrader = newCopy[Math.floor(Math.random() * newCopy.length)]
+  randomTrader.name = _addInput.value
+
+  let copiesList = document.querySelectorAll('.copiesList');
+
+  copiesList.forEach(element => element.remove())
+
+  newCopy.unshift(randomTrader)
+  updateCopies(newCopy)
+  copies = [...newCopy]
+});

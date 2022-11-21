@@ -38,10 +38,8 @@ body {
   }
 }
 
-.left,
-.center,
 .right {
-  width: 33.3333333333%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -49,9 +47,14 @@ body {
   height: 100%;
 }
 
-.left,
-.right {
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
   padding: 0 2em;
+  flex: 1;
 
   @media (max-width: 768px) {
     display: none;
@@ -67,7 +70,7 @@ body {
   }
 }
 
-.center {
+.right {
   padding: 0 2em;
   border-left: 1px solid rgba(255, 255, 255, 0.18);
   border-right: 1px solid rgba(255, 255, 255, 0.18);
@@ -143,20 +146,7 @@ body {
   }
 
   &::-webkit-scrollbar {
-    width: 5px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: #fff;
-    border-radius: 12px;
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    width: 0;
   }
 }
 
@@ -197,19 +187,20 @@ body {
           font-weight: 600;
         }
 
-        &:nth-child(2) {
-          font-size: .8rem;
+        &:nth-child(2),
+        &:nth-child(3) {
+          font-size: .7rem;
         }
       }
     }
   }
 
-  .listItemRight {
+  .listItemButtonContainer {
     button {
       background-color: #3C37FF;
       border: none;
       color: #fff;
-      font-size: 1rem;
+      font-size: .9rem;
       padding: .5em 1em;
       border-radius: 8px;
 
@@ -227,22 +218,6 @@ body {
   margin-top: 2em;
   display: flex;
   align-items: center;
-
-  span {
-    color: #fff;
-    font-weight: 600;
-    font-size: 1.2rem;
-  }
-}
-
-.centerHead {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin-bottom: 1em;
-
 
   span {
     color: #fff;

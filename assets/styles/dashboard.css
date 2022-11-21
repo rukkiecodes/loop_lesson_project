@@ -51,10 +51,8 @@ body {
   }
 }
 
-.left,
-.center,
 .right {
-  width: 33.3333333333%;
+  width: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -71,39 +69,52 @@ body {
   height: 100%;
 }
 
-.left,
-.right {
+.left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
   padding: 0 2em;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 @media (max-width: 768px) {
-  .left,
-  .right {
+  .left {
     display: none;
   }
 }
 
-.left button,
-.right button {
+.left button {
   background-color: #FF4757 !important;
 }
 
-.left button:hover,
-.right button:hover {
+.left button:hover {
   -webkit-box-shadow: 0 10px 20px -10px #FF4757 !important;
           box-shadow: 0 10px 20px -10px #FF4757 !important;
   -webkit-transform: translateY(-3px);
           transform: translateY(-3px);
 }
 
-.center {
+.right {
   padding: 0 2em;
   border-left: 1px solid rgba(255, 255, 255, 0.18);
   border-right: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 @media (max-width: 768px) {
-  .center {
+  .right {
     width: 100%;
   }
 }
@@ -189,20 +200,7 @@ body {
 }
 
 .transactionsList::-webkit-scrollbar {
-  width: 5px;
-}
-
-.transactionsList::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.transactionsList::-webkit-scrollbar-thumb {
-  background: #fff;
-  border-radius: 12px;
-}
-
-.transactionsList::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  width: 0;
 }
 
 .listItem {
@@ -260,20 +258,20 @@ body {
   font-weight: 600;
 }
 
-.listItem .listItemLeft .infoView span:nth-child(2) {
-  font-size: .8rem;
+.listItem .listItemLeft .infoView span:nth-child(2), .listItem .listItemLeft .infoView span:nth-child(3) {
+  font-size: .7rem;
 }
 
-.listItem .listItemRight button {
+.listItem .listItemButtonContainer button {
   background-color: #3C37FF;
   border: none;
   color: #fff;
-  font-size: 1rem;
+  font-size: .9rem;
   padding: .5em 1em;
   border-radius: 8px;
 }
 
-.listItem .listItemRight button:hover {
+.listItem .listItemButtonContainer button:hover {
   -webkit-box-shadow: 0 10px 20px -10px #3C37FF;
           box-shadow: 0 10px 20px -10px #3C37FF;
   -webkit-transform: translateY(-3px);
@@ -293,30 +291,6 @@ body {
 }
 
 .head span {
-  color: #fff;
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-
-.centerHead {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  margin-bottom: 1em;
-}
-
-.centerHead span {
   color: #fff;
   font-weight: 600;
   font-size: 1.2rem;
