@@ -2,6 +2,9 @@ const _addButton = document.querySelector('#addButton');
 const _addInput = document.querySelector('input');
 const _mainTransactionCards = document.querySelector('.mainTransactionCards');
 const _leftTransactionCards = document.querySelector('.leftTransactionCards');
+const _left = document.querySelector('.left')
+const _right = document.querySelector('.right')
+const _navButton = document.querySelector('.navButton')
 
 let copied = [];
 let copies = [];
@@ -92,3 +95,25 @@ _addButton.addEventListener('click', () => {
   updateCopies(newCopy)
   copies = [...newCopy]
 });
+
+
+// toggle sides
+_navButton.addEventListener('click', () => {
+  if (!_right.classList.contains('hide')) {
+    _right.classList.add('hide')
+    _left.style.display = 'flex'
+  } else {
+    _left.style.display = 'none'
+    _right.classList.remove('hide')
+  }
+})
+
+// reset display
+window.addEventListener('resize', e => {
+  if (window.innerWidth >= 768) {
+    _right.classList.remove('hide')
+    _left.style.display = 'flex'
+  } else {
+    _left.style.display = 'none'
+  }
+})
