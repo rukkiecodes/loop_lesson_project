@@ -16,9 +16,9 @@ let copies = [];
 
   updateCopies(content?.copies)
 
-  let listItemButton = document.querySelectorAll('.listItemButton');
+  let listItemButtonCopy = document.querySelectorAll('.listItemButtonCopy');
 
-  listItemButton.forEach(button => {
+  listItemButtonCopy.forEach(button => {
     button.addEventListener('click', async function () {
       let copy = this.parentNode.parentNode
       const addCopyData = copy.querySelector('#addCopyData').innerText
@@ -51,7 +51,7 @@ const updateCopies = (copies) =>
                                             </div>
                                           </div>
                                           <div class="listItemButtonContainer">
-                                            <button class="listItemButton"> Copy </button>
+                                            <button class="listItemButton listItemButtonCopy"> Copy </button>
                                           </div>
                                         </div>`
   });
@@ -70,10 +70,11 @@ const updateCopied = (copied) =>
                                             </div>
                                           </div>
                                           <div class="listItemButtonContainer">
-                                            <button class="listItemButton"> Delete </button>
+                                            <button class="listItemButton listItemButtonDelete"> Delete </button>
                                           </div>
                                         </div>`
   });
+
 
 _addButton.addEventListener('click', () => {
   if (_addInput.value == '') return
